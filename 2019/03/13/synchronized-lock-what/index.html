@@ -5,18 +5,20 @@
   
 
   
-  <title>Null的博客</title>
+  <title>synchronized锁了什么 | Null的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个全干工程师的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Null的博客">
-<meta property="og:url" content="https://ruanjiehui.github.io/index.html">
+  <meta name="description" content="前言synchronized翻译为中文的意思是同步的，它是Java中处理线程安全问题常用的关键字。也有人称其为同步锁。既然是锁，其必然有锁的东西，下面先会简单介绍一下synchronized，再通过一个示例代码展示synchronized锁了什么。（这里先提前透露答案synchronized锁的是代码） 介绍定义synchronized提供的同步机制确保了同一个时刻，被修饰的代码块或方法只会有一个">
+<meta name="keywords" content="多线程,synchronized">
+<meta property="og:type" content="article">
+<meta property="og:title" content="synchronized锁了什么">
+<meta property="og:url" content="https://ruanjiehui.github.io/2019/03/13/synchronized-lock-what/index.html">
 <meta property="og:site_name" content="Null的博客">
-<meta property="og:description" content="一个全干工程师的个人博客">
+<meta property="og:description" content="前言synchronized翻译为中文的意思是同步的，它是Java中处理线程安全问题常用的关键字。也有人称其为同步锁。既然是锁，其必然有锁的东西，下面先会简单介绍一下synchronized，再通过一个示例代码展示synchronized锁了什么。（这里先提前透露答案synchronized锁的是代码） 介绍定义synchronized提供的同步机制确保了同一个时刻，被修饰的代码块或方法只会有一个">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-03-13T14:33:54.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Null的博客">
-<meta name="twitter:description" content="一个全干工程师的个人博客">
+<meta name="twitter:title" content="synchronized锁了什么">
+<meta name="twitter:description" content="前言synchronized翻译为中文的意思是同步的，它是Java中处理线程安全问题常用的关键字。也有人称其为同步锁。既然是锁，其必然有锁的东西，下面先会简单介绍一下synchronized，再通过一个示例代码展示synchronized锁了什么。（这里先提前透露答案synchronized锁的是代码） 介绍定义synchronized提供的同步机制确保了同一个时刻，被修饰的代码块或方法只会有一个">
   
     <link rel="alternate" href="/atom.xml" title="Null的博客" type="application/atom+xml">
   
@@ -63,9 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-synchronized-lock-what" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-synchronized-lock-what" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/13/synchronized-lock-what/" class="article-date">
   <time datetime="2019-03-13T13:38:18.000Z" itemprop="datePublished">2019-03-13</time>
@@ -78,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/synchronized-lock-what/">synchronized锁了什么</a>
+    <h1 class="article-title" itemprop="name">
+      synchronized锁了什么
     </h1>
   
 
@@ -138,11 +138,9 @@
     </footer>
   </div>
   
-</article>
-
-
+    
   
-
+</article>
 
 </section>
         
