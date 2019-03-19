@@ -65,6 +65,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-arraylist-problem" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/19/arraylist-problem/" class="article-date">
+  <time datetime="2019-03-19T14:34:23.000Z" itemprop="datePublished">2019-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/arraylist-problem/">ArrayList常见问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>ArrayList</code>使用<code>Object</code>数组存储<strong>数组元素</strong>，并使用<code>size</code>属性记录<strong>数组长度</strong>。</p>
+<p>需要注意<code>ArrayList</code>是<strong>非线程安全</strong>的。</p>
+<h2 id="常见问题汇总"><a href="#常见问题汇总" class="headerlink" title="常见问题汇总"></a>常见问题汇总</h2><ol>
+<li><p><code>ArrayList</code>的默认初始长度是多少？最大长度是多少？</p>
+<p> <code>ArrayList</code>的默认初始长度是<code>10</code>，是由<code>DEFAULT_CAPACITY</code>设定的。</p>
+<p> 由于<code>ArrayList</code>底层是用<code>Object</code>数组存储元素，所以<code>ArrayList</code>最大长度为<code>Integer.MAX_VALUE</code>，即<code>2147483647(2)</code>。这里需要注意常量<code>MAX_ARRAY_SIZE(Integer.MAX_VALUE - 8)</code>并不是<code>ArrayList</code>真正的最大长度，原因可以参考<code>hugeCapacity()</code>方法。</p>
+</li>
+<li><p><code>ArrayList</code>是如何扩容的？</p>
+<p> 扩容发生在插入数组元素时（关键方法为<code>grow()</code>方法）</p>
+<ul>
+<li>先计算增加完新元素后的<code>ArrayList</code>长度<code>size</code></li>
+<li>然后<code>size</code>与<code>minCapacity</code>比较来判断是否需要扩容</li>
+<li>扩容时一般扩容为新数组长度<code>newCapacity</code>为原数组长度<code>oldCapacity</code>的<code>1.5</code>倍（<code>oldCapacity</code>带符号右移<code>1</code>位并加上<code>oldCapacity</code>）。</li>
+<li>特殊情况是存在<code>newCapacity</code>长度超过Array的最大支持长度<code>MAX_ARRAY_SIZE</code>则调用<code>hugeCapacity()</code>进行特殊处理防止数组超出最大长度(int最大值)。</li>
+</ul>
+</li>
+<li><p><code>ArrayList</code>扩容后是否会自动缩容？如果不能怎样进行缩容？</p>
+<p> <code>ArrayList</code>只能自动扩容，不能自动缩容。如果需要进行缩容，可以调用<code>ArrayList</code>提供的<code>trimToSize()</code>方法。</p>
+</li>
+<li><p>ArrayList底层数组扩容时是如何保证高效复制数组的？</p>
+<p> 表面上是调用<code>Arrays.copyOf()</code>方法，实际上是<code>Arrays.copyOf()</code>通过调用<code>System.arraycopy()</code>方法确保高效复制数组。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ruanjiehui.github.io/2019/03/19/arraylist-problem/" data-id="cjtfvsmsu0000ux9db2imevvq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-synchronized-lock-what" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/13/synchronized-lock-what/" class="article-date">
@@ -130,10 +191,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ruanjiehui.github.io/2019/03/13/synchronized-lock-what/" data-id="cjt7b1b700000hk9daqhdy7mw" class="article-share-link">Share</a>
+      <a data-url="https://ruanjiehui.github.io/2019/03/13/synchronized-lock-what/" data-id="cjtfvsmsz0001ux9d4zrls8cv" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/synchronized/">synchronized</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
 
     </footer>
   </div>
@@ -155,7 +216,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/synchronized/">synchronized</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
     </div>
   </div>
 
@@ -165,7 +226,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/synchronized/" style="font-size: 10px;">synchronized</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
+      <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
     </div>
   </div>
 
@@ -185,6 +246,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/19/arraylist-problem/">ArrayList常见问题</a>
+          </li>
         
           <li>
             <a href="/2019/03/13/synchronized-lock-what/">synchronized锁了什么</a>
